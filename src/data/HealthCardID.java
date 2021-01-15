@@ -1,12 +1,22 @@
 package data;
 
-public class HealthCardID {
+final public class HealthCardID {
 
     private final String personalID;
 
     public HealthCardID(String code) {
-        this. personalID = code;
+        if (code == null){throw new RuntimeException("Error: El codi es nul");}
+        if (code.length() != 12){ throw new RuntimeException("Error: Format incorrecte"); }
+        for (int i=0; i<12; i++)
+        {
+            if (!Character.isDigit(code.charAt(i)))
+            {
+                throw new RuntimeException("Error: Format incorrecte");
+            }
+        }
+        this.personalID = code;
     }
+
     public String getPersonalID() {
         return personalID;
     }
