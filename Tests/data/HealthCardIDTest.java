@@ -39,13 +39,13 @@ class HealthCardIDTest {
 
     @Test
     void ProductIDNullTest() {
-        Exception exception = assertThrows(RuntimeException.class, () -> new HealthCardID(null));
+        Exception exception = assertThrows(NullPointerException.class, () -> new HealthCardID(null));
         assertTrue(exception.getMessage().contains("Error: El codi es nul"));
     }
 
     @Test
     void IncorrectFormatCodeTest() {
-        Exception exception = assertThrows(Exception.class, () -> new HealthCardID("123456"));
+        Exception exception = assertThrows(FormatException.class, () -> new HealthCardID("123456"));
         assertTrue(exception.getMessage().contains("Error: Format incorrecte"));
     }
 }
