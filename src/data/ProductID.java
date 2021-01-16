@@ -1,10 +1,13 @@
 package data;
 
+import servicies.exceptions.FormatException;
+
 public class ProductID {
     private final String productID;
 
-    public ProductID(String code) {
-        if (code == null){throw new RuntimeException("Error: El codi es nul");}
+    public ProductID(String code) throws FormatException {
+        if (code == null){throw new NullPointerException("Error: El codi es nul");}
+        if (code.length() != 12){ throw new FormatException("Error: Format incorrecte"); }
         this.productID = code;
     }
 

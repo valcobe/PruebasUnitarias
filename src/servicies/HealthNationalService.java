@@ -9,7 +9,7 @@ import servicies.exceptions.*;
 import java.net.ConnectException;
 import java.util.List;
 
-public class HealthNationalService implements HealthNationalService {
+public class HealthNationalService implements HealthNationalServiceInt {
 
     @Override
     public MedicalPrescription getePrescription(HealthCardID hcID) throws HealthCardException, NotValidePrescriptionException, ConnectException{

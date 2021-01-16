@@ -1,17 +1,19 @@
 package data;
 
+import servicies.exceptions.FormatException;
+
 final public class HealthCardID {
 
     private final String personalID;
 
-    public HealthCardID(String code) {
-        if (code == null){throw new RuntimeException("Error: El codi es nul");}
-        if (code.length() != 12){ throw new RuntimeException("Error: Format incorrecte"); }
+    public HealthCardID(String code) throws FormatException {
+        if (code == null){throw new NullPointerException("Error: El codi es nul");}
+        if (code.length() != 12){ throw new FormatException("Error: Format incorrecte"); }
         for (int i=0; i<12; i++)
         {
             if (!Character.isDigit(code.charAt(i)))
             {
-                throw new RuntimeException("Error: Format incorrecte");
+                throw new FormatException("Error: Format incorrecte");
             }
         }
         this.personalID = code;
