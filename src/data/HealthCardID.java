@@ -1,6 +1,6 @@
 package data;
 
-import servicies.exceptions.FormatException;
+import medicalconsultation.exceptions.FormatException;
 
 final public class HealthCardID {
 

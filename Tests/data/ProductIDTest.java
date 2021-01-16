@@ -1,7 +1,7 @@
 package data;
 
+import medicalconsultation.exceptions.FormatException;
 import org.junit.jupiter.api.Test;
-import servicies.exceptions.FormatException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

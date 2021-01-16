@@ -1,0 +1,5 @@
+package medicalconsultation;
+
+class ConsultationTerminalTest {
+
+}

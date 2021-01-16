@@ -3,9 +3,9 @@ package medicalconsultation;
 import data.DigitalSignature;
 import data.HealthCardID;
 import data.ProductID;
-import medicalconsultation.exceptions.*;
+import medicalconsultation.exceptions.IncorrectTakingGuidelinesException;
+import medicalconsultation.exceptions.ProductNotInPrescription;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -24,6 +24,9 @@ public class MedicalPrescription {// A class that represents medical prescriptio
         this.hcID = hcID;
         this.eSign = eSign;
         this.mPLines = new HashMap<>();
+    }
+
+    public MedicalPrescription() {
     }
 
     public void addLine(ProductID prodID, String[] instruc) throws IncorrectTakingGuidelinesException {

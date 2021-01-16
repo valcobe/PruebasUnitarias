@@ -1,12 +1,12 @@
 package medicalconsultation;
 
 import data.ProductID;
+import medicalconsultation.exceptions.FormatException;
 import org.junit.jupiter.api.Test;
-import servicies.exceptions.FormatException;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductSpecificationTest {
 

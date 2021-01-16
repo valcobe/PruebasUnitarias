@@ -1,4 +1,4 @@
-package servicies.exceptions;
+package medicalconsultation.exceptions;
 
 public class FormatException extends Exception {
     public FormatException(String msg){

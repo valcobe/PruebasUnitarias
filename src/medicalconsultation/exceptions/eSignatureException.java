@@ -1,4 +1,4 @@
-package servicies.exceptions;
+package medicalconsultation.exceptions;
 
 public class eSignatureException extends Exception {
     public eSignatureException(String msg){

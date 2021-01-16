@@ -1,6 +1,6 @@
 package data;
 
-import servicies.exceptions.FormatException;
+import medicalconsultation.exceptions.FormatException;
 
 public class ProductID {
     private final String productID;

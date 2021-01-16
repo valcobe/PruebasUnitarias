@@ -3,15 +3,14 @@ package medicalconsultation;
 import data.DigitalSignature;
 import data.HealthCardID;
 import data.ProductID;
+import medicalconsultation.exceptions.FormatException;
 import medicalconsultation.exceptions.IncorrectTakingGuidelinesException;
 import medicalconsultation.exceptions.ProductNotInPrescription;
 import org.junit.jupiter.api.Test;
-import servicies.exceptions.FormatException;
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
