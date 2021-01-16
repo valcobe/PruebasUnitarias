@@ -39,17 +39,13 @@ class ProductIDTest {
 
     @Test
     void ProductIDNullTest() {
-        Exception exception = assertThrows(NullPointerException.class, () -> {
-            new ProductID(null);
-        });
+        Exception exception = assertThrows(NullPointerException.class, () -> new ProductID(null));
         assertTrue(exception.getMessage().contains("Error: El codi es nul"));
     }
 
     @Test
     void IncorrectFormatCodeTest() {
-        Exception exception = assertThrows(FormatException.class, () -> {
-            new ProductID("123456");
-        });
+        Exception exception = assertThrows(FormatException.class, () -> new ProductID("123456"));
         assertTrue(exception.getMessage().contains("Error: Format incorrecte"));
     }
 }

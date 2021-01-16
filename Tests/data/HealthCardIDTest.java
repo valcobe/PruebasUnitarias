@@ -35,23 +35,17 @@ class HealthCardIDTest {
     void toStringTest() {
         String s = "HealthCardID{personal code='123456789012'}";
         assertEquals(s, cardID1.toString());
-
-        System.out.print("first statement. ");
     }
 
     @Test
     void ProductIDNullTest() {
-        Exception exception = assertThrows(RuntimeException.class, () -> {
-            new HealthCardID(null);
-        });
+        Exception exception = assertThrows(RuntimeException.class, () -> new HealthCardID(null));
         assertTrue(exception.getMessage().contains("Error: El codi es nul"));
     }
 
     @Test
     void IncorrectFormatCodeTest() {
-        Exception exception = assertThrows(Exception.class, () -> {
-            new HealthCardID("123456");
-        });
+        Exception exception = assertThrows(Exception.class, () -> new HealthCardID("123456"));
         assertTrue(exception.getMessage().contains("Error: Format incorrecte"));
     }
 }
