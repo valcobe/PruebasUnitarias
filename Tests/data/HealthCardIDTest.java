@@ -7,16 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HealthCardIDTest {
 
-    HealthCardID cardID1 = new HealthCardID("123456789012");
-    HealthCardID cardID2 = new HealthCardID("987654321098");
-    HealthCardID cardID3 = new HealthCardID("123456789012");
+    HealthCardID cardID1 = new HealthCardID("BBBBBBBBQR648597807024000012");
+    HealthCardID cardID2 = new HealthCardID("BBBBBBBBAG541214555211116987");
+    HealthCardID cardID3 = new HealthCardID("BBBBBBBBQR648597807024000012");
 
     HealthCardIDTest() throws FormatException {
     }
 
     @Test
     void getPersonalIDTest() {
-        assertEquals("123456789012", cardID1.getPersonalID());
+        assertEquals("BBBBBBBBQR648597807024000012", cardID1.getPersonalID());
     }
 
     @Test
@@ -33,7 +33,7 @@ class HealthCardIDTest {
 
     @Test
     void toStringTest() {
-        String s = "HealthCardID{personal code='123456789012'}";
+        String s = "HealthCardID{personal code='BBBBBBBBQR648597807024000012'}";
         assertEquals(s, cardID1.toString());
     }
 

@@ -8,14 +8,7 @@ final public class HealthCardID {
 
     public HealthCardID(String code) throws FormatException {
         if (code == null){throw new NullPointerException("Error: El codi es nul");}
-        if (code.length() != 12){ throw new FormatException("Error: Format incorrecte"); }
-        for (int i=0; i<12; i++)
-        {
-            if (!Character.isDigit(code.charAt(i)))
-            {
-                throw new FormatException("Error: Format incorrecte");
-            }
-        }
+        if (code.length() != 28){ throw new FormatException("Error: Format incorrecte"); }
         this.personalID = code;
     }
 
