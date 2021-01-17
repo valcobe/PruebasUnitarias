@@ -3,7 +3,7 @@ package medicalconsultation;
 import data.DigitalSignature;
 import data.HealthCardID;
 import data.ProductID;
-import medicalconsultation.exceptions.FormatException;
+import data.exceptions.FormatException;
 import medicalconsultation.exceptions.IncorrectTakingGuidelinesException;
 import medicalconsultation.exceptions.ProductNotInPrescription;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
 package data;
 
-import medicalconsultation.exceptions.FormatException;
+import data.exceptions.FormatException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,7 @@
 package medicalconsultation;
 
 import data.ProductID;
-import medicalconsultation.exceptions.FormatException;
+import data.exceptions.FormatException;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
