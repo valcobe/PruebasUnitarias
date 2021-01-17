@@ -15,7 +15,21 @@ public class MedicalPrescription {// A class that represents medical prescriptio
     private Date endDate;
     private HealthCardID hcID; // the healthcard ID of the patient
     private DigitalSignature eSign; // the eSignature of the doctor
-    private HashMap<ProductID,MedicinePrescriptionLine> mPLines;
+    private HashMap<ProductID,MedicinePrescriptionLine> mPLines; // linies de prescripció
+
+    public MedicalPrescription() {
+        this.prescCode = 0;
+        this.mPLines = new HashMap<>();
+    }
+
+    public MedicalPrescription(int prescCode, Date prescDate, Date endDate, HealthCardID hcID, DigitalSignature eSign, HashMap<ProductID, MedicinePrescriptionLine> mPLines) {
+        this.prescCode = prescCode;
+        this.prescDate = prescDate;
+        this.endDate = endDate;
+        this.hcID = hcID;
+        this.eSign = eSign;
+        this.mPLines = mPLines;
+    }
 
     public MedicalPrescription(int prescCode, Date prescDate, Date endDate, HealthCardID hcID, DigitalSignature eSign) {
         this.prescCode = prescCode;
@@ -24,9 +38,6 @@ public class MedicalPrescription {// A class that represents medical prescriptio
         this.hcID = hcID;
         this.eSign = eSign;
         this.mPLines = new HashMap<>();
-    }
-
-    public MedicalPrescription() {
     }
 
     public void addLine(ProductID prodID, String[] instruc) throws IncorrectTakingGuidelinesException {

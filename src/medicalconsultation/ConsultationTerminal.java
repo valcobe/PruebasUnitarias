@@ -16,7 +16,7 @@ public class ConsultationTerminal {
     ScheduledVisitAgenda scheduledVisitAgenda;
     MedicalPrescription medicalPrescription;
     List<ProductSpecification> prodList;
-    ProductSpecification productSpecification;
+    ProductSpecification productSelected;
 
     public ConsultationTerminal() {
     }
@@ -31,17 +31,15 @@ public class ConsultationTerminal {
     }
     public void searchForProducts(String keyWord) throws AnyKeyWordMedicineException, ConnectException{
         this.prodList = healthNationalService.getProductsByKW(keyWord);
-        if(this.prodList == null){throw new AnyKeyWordMedicineException("Error: No s'ha trobat cap medicament");}
     }
     public void selectProduct(int option) throws AnyMedicineSearchException, ConnectException{
-        if(this.prodList == null){throw new AnyMedicineSearchException("Error: No s'ha realitzat cap cerca");}
-        this.productSpecification = healthNationalService.getProductSpecific(option);
+        this.productSelected = healthNationalService.getProductSpecific(option);
     }
     public void enterMedicineGuidelines(String[] instruc) throws AnySelectedMedicineException, IncorrectTakingGuidelinesException{
-        if(this.productSpecification == null){throw new AnySelectedMedicineException("Error: No s'ha seleccionat cap medicament");}
-        this.medicalPrescription.addLine(this.productSpecification.getUPCcode(),instruc);
+        if(this.productSelected == null){throw new AnySelectedMedicineException("Error: No s'ha seleccionat cap medicament");}
+        this.medicalPrescription.addLine(this.productSelected.getUPCcode(),instruc);
         this.prodList = null;
-        this.productSpecification = null;
+        this.productSelected = null;
     }
     public void enterTreatmentEndingDate(Date date) throws IncorrectEndingDateException {
         if(date.before(new Date())){throw new IncorrectEndingDateException("Error: La data és anterior a la data actual");}
