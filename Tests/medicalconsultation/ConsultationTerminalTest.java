@@ -76,7 +76,6 @@ class ConsultationTerminalTest {
 
         HashMap<HealthCardID,MedicalPrescription> pacients = new HashMap<>();
         HashMap<String, ProductSpecification> catalegProductes = new HashMap<>();
-        List<ProductSpecification> productesTrobats = new ArrayList<>();
 
         Date date1 = new GregorianCalendar(2019, Calendar.FEBRUARY, 11).getTime();
         Date date2 = new GregorianCalendar(2019, Calendar.APRIL, 11).getTime();
@@ -109,13 +108,13 @@ class ConsultationTerminalTest {
         pacients.put(new HealthCardID("BBBBBBBBQR648597807024000014"),medicalPrescription3);
         pacients.put(new HealthCardID("BBBBBBBBQR648597807024000015"),medicalPrescription4);
 
-        catalegProductes.put("paracetamol",new ProductSpecification(new ProductID("prod12345678"),"des1",new BigDecimal(3.0)));
-        catalegProductes.put("ibuprofeno",new ProductSpecification(new ProductID("prod12345679"),"ibuprofeno past",new BigDecimal(2.0)));
-        catalegProductes.put("espedifen",new ProductSpecification(new ProductID("prod12345671"),"des3",new BigDecimal(6.0)));
-        catalegProductes.put("ibuprofeno sobres",new ProductSpecification(new ProductID("prod12345672"),"ibuprofeno en sobres",new BigDecimal(1.5)));
-        catalegProductes.put("dalsy azul",new ProductSpecification(new ProductID("prod12345647"),"dalsy color azul",new BigDecimal(4.0)));
-        catalegProductes.put("dalsy naranja",new ProductSpecification(new ProductID("prod12345615"),"dalsy color naranja",new BigDecimal(4.0)));
-        catalegProductes.put("dalsy modificado",new ProductSpecification(new ProductID("prod12345622"),"dalsy modificado",new BigDecimal(4.0)));
+        catalegProductes.put("paracetamol",new ProductSpecification(new ProductID("prod12345678"),"des1",new BigDecimal("3.0")));
+        catalegProductes.put("ibuprofeno",new ProductSpecification(new ProductID("prod12345679"),"ibuprofeno past",new BigDecimal("2.0")));
+        catalegProductes.put("espedifen",new ProductSpecification(new ProductID("prod12345671"),"des3",new BigDecimal("6.0")));
+        catalegProductes.put("ibuprofeno sobres",new ProductSpecification(new ProductID("prod12345672"),"ibuprofeno en sobres",new BigDecimal("1.5")));
+        catalegProductes.put("dalsy azul",new ProductSpecification(new ProductID("prod12345647"),"dalsy color azul",new BigDecimal("4.0")));
+        catalegProductes.put("dalsy naranja",new ProductSpecification(new ProductID("prod12345615"),"dalsy color naranja",new BigDecimal("4.0")));
+        catalegProductes.put("dalsy modificado",new ProductSpecification(new ProductID("prod12345622"),"dalsy modificado",new BigDecimal("4.0")));
 
         ((HealthNationalServiceTestDoble)consultationTerminal.healthNationalService).pacients = pacients;
         ((HealthNationalServiceTestDoble)consultationTerminal.healthNationalService).catalegProductes = catalegProductes;
