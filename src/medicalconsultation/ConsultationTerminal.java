@@ -49,7 +49,6 @@ public class ConsultationTerminal {
     public void sendePrescription() throws ConnectException, NotValidePrescription, eSignatureException, NotCompletedMedicalPrescription{
         this.medicalPrescription = healthNationalService.sendePrescription(this.medicalPrescription);
     }
-
     public void printePresc() throws printingException{}
 }
 
